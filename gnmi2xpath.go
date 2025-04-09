@@ -62,7 +62,7 @@ func printGNMIPath(path *gnmi.Path) string {
 }
 
 // Compares 2 gNMI paths using proto.Equal
-func compareGnmi(p1 *gnmi.Path, p2 *gnmi.Path) bool {
+func compareGnmiPaths(p1 *gnmi.Path, p2 *gnmi.Path) bool {
 	return proto.Equal(p1, p2)
 }
 
@@ -102,4 +102,9 @@ func main() {
 		fmt.Printf("ERROR in XPATH conversion. Ours - %s, Ygot - %s\n", xpathBack2, xpathBack1)
 	}
 	fmt.Println("Converted back to XPATH: ", xpathBack1)
+
+	// Simpler trick to double conversion (xpath->gNMI->xpath) and check if matches
+	if xpath != GNMIPathToXpath(XpathToGNMIPath(xpath)) {
+		fmt.Printf("Error in xpath -> gNMI -> xpath conversion!") 
+	}
 }
