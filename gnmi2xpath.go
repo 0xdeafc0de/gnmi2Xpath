@@ -6,7 +6,6 @@ import (
 
 	gnmi "github.com/openconfig/gnmi/proto/gnmi"
 	"google.golang.org/protobuf/encoding/prototext"
-
 )
 
 func printGNMIPath(path *gnmi.Path) string {
@@ -60,7 +59,8 @@ func GNMIPathToXpath(path *gnmi.Path) string {
 }
 
 func main() {
-	xpath := "/tunnel/serialnos/serialno[sn=A99Z99999454]/ssids/ssid[id=Nile-Secure]/radios/radio[id=2]/state/counters"
+	xpath := "/switch/clusters/cluster[name=cluster-1]/ports/port[id=eth0]/interfaces/interface[name=eth0.100]/state/counters"
+
 	fmt.Println("Input XPATH:", xpath)
 
 	gnmiPath := XpathToGNMIPath(xpath)
@@ -69,4 +69,3 @@ func main() {
 	xpathBack := GNMIPathToXpath(gnmiPath)
 	fmt.Println("Converted back to XPATH:", xpathBack)
 }
-
