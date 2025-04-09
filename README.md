@@ -1,7 +1,5 @@
 # gNMI Path Converter
 
-This is a Go project that provides utilities to:
-
 - Convert YANG-style XPATH keys (commonly stored in Redis) into gNMI-encoded `Path` proto messages for use at the **system side (Target)**.
 - Convert gNMI `Path` proto messages back into YANG-style XPATH strings for the ** Broker e.g. collector** (Server side).
 
@@ -13,6 +11,7 @@ The tool is helpful for systems using model-driven telemetry based on [gNMI](htt
 - Convert gNMI Path proto into readable OpenConfig XPATH strings
 - Supports multi-key path segments (`foo[bar=val][baz=val2]`)
 - Ready for integration with Redis pipelines and telemetry backends
+- Checks the path correctness by comparing with ygot generated xpath and gNMI paths.
 
 ## Example 
 ```bash

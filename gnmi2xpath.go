@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	gnmi "github.com/openconfig/gnmi/proto/gnmi"
+	"github.com/openconfig/gnmi/proto/gnmi"
 	"github.com/openconfig/ygot/ygot"
 	"google.golang.org/protobuf/encoding/prototext"
 	"google.golang.org/protobuf/proto"
@@ -105,6 +105,6 @@ func main() {
 
 	// Simpler trick to double conversion (xpath->gNMI->xpath) and check if matches
 	if xpath != GNMIPathToXpath(XpathToGNMIPath(xpath)) {
-		fmt.Printf("Error in xpath -> gNMI -> xpath conversion!") 
+		fmt.Printf("ERROR - No match after xpath->gNMI->xpath conversion!")
 	}
 }
