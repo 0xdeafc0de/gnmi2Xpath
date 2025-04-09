@@ -4,10 +4,16 @@ go 1.23.4
 
 require (
 	github.com/openconfig/gnmi v0.14.1
+	github.com/openconfig/ygot v0.29.20
 	google.golang.org/protobuf v1.36.6
 )
 
 require (
+	github.com/golang/glog v1.2.4 // indirect
+	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/kylelemons/godebug v1.1.0 // indirect
+	github.com/openconfig/goyang v1.6.0 // indirect
+	golang.org/x/exp v0.0.0-20241009180824-f66d83c29e7c // indirect
 	golang.org/x/net v0.34.0 // indirect
 	golang.org/x/sys v0.29.0 // indirect
 	golang.org/x/text v0.21.0 // indirect
