@@ -15,8 +15,10 @@ The tool is helpful for systems using model-driven telemetry based on [gNMI](htt
 - Ready for integration with Redis pipelines and telemetry backends
 
 ## Example 
+```bash
 
 Input XPATH: /switch/clusters/cluster[name=cluster-1]/ports/port[id=eth0]/interfaces/interface[name=eth0.100]/state/counters
+
 Converted to gNMI Path: elem:  {
   name:  "switch"
 }
@@ -58,4 +60,5 @@ elem:  {
 }
 
 Converted back to XPATH: /switch/clusters/cluster[name=cluster-1]/ports/port[id=eth0]/interfaces/interface[name=eth0.100]/state/counters
+```
 
